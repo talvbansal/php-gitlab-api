@@ -559,7 +559,7 @@ class ProjectsTest extends ApiTestCase
         $api = $this->getApiMock();
         $api->expects($this->once())
             ->method('post')
-            ->with('projects/1/hooks', array('url' => 'http://www.example.com', 'push_events' => true, 'issues_events' => true, 'merge_requests_events' => true))
+            ->with('projects/1/hooks?url=' . urlencode('http://www.example.com'), array('url' => 'http://www.example.com', 'push_events' => true, 'issues_events' => true, 'merge_requests_events' => true))
             ->will($this->returnValue($expectedArray))
         ;
 
@@ -576,7 +576,7 @@ class ProjectsTest extends ApiTestCase
         $api = $this->getApiMock();
         $api->expects($this->once())
             ->method('post')
-            ->with('projects/1/hooks', array('url' => 'http://www.example.com', 'push_events' => true))
+            ->with('projects/1/hooks?url=' . urlencode('http://www.example.com'), array('url' => 'http://www.example.com', 'push_events' => true))
             ->will($this->returnValue($expectedArray))
         ;
 
@@ -593,7 +593,7 @@ class ProjectsTest extends ApiTestCase
         $api = $this->getApiMock();
         $api->expects($this->once())
             ->method('post')
-            ->with('projects/1/hooks', array('url' => 'http://www.example.com', 'push_events' => false))
+            ->with('projects/1/hooks?url=' . urlencode('http://www.example.com'), array('url' => 'http://www.example.com', 'push_events' => false))
             ->will($this->returnValue($expectedArray))
         ;
 
