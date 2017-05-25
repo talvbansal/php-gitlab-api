@@ -13,7 +13,7 @@ class KeysTest extends ApiTestCase
         $api = $this->getApiMock();
         $api->expects($this->once())
             ->method('get')
-            ->with('keys/1')
+            ->with('/projects/1/deploy_keys')
             ->will($this->returnValue($expectedArray));
 
         $this->assertEquals($expectedArray, $api->show(1));

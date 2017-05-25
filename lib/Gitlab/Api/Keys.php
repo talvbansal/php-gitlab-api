@@ -8,6 +8,6 @@ class Keys extends AbstractApi
      */
     public function show($id)
     {
-        return $this->get('keys/'.$this->encodePath($id));
+        return $this->get('/projects/'.$this->encodePath($id).'/deploy_keys');
     }
 }
