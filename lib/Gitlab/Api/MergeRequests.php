@@ -206,7 +206,7 @@ class MergeRequests extends AbstractApi
      */
     public function getByIid($project_id, $mr_iid)
     {
-        return $this->get($this->getProjectPath($project_id, 'merge_requests'), array('iid' => $mr_iid));
+        return $this->get($this->getProjectPath($project_id, 'merge_requests'), array('iids' => $mr_iid));
     }
 
     /**

@@ -346,7 +346,7 @@ class MergeRequestsTest extends ApiTestCase
         $api = $this->getApiMock();
         $api->expects($this->once())
             ->method('get')
-            ->with('projects/1/merge_requests', array('iid' => 2))
+            ->with('projects/1/merge_requests', array('iids' => 2))
             ->will($this->returnValue($expectedArray))
         ;
 
