@@ -332,7 +332,11 @@ class Projects extends AbstractApi
 
         $params['url'] = $url;
 
-        return $this->post($this->getProjectPath($project_id, 'hooks'), $params);
+        return $this->post(
+            $this->getProjectPath($project_id, 'hooks') . '?url=' .urlencode($url),
+            $params
+        );
+
     }
 
     /**

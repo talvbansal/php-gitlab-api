@@ -211,7 +211,7 @@ class HttpClient implements HttpClientInterface
         if (empty($files)) {
             $request = new Request($httpMethod);
             $request->setContent(http_build_query($parameters));
-        } else {
+        }else{
             $request = new FormRequest($httpMethod);
             foreach ($parameters as $name => $value) {
                 $request->setField($name, $value);
