@@ -12,7 +12,7 @@ class ProjectsTest extends ApiTestCase
     {
         $expectedArray = $this->getMultipleProjectsData();
 
-        $api = $this->getMultipleProjectsRequestMock('projects/all', $expectedArray);
+        $api = $this->getMultipleProjectsRequestMock('projects', $expectedArray);
 
         $this->assertEquals($expectedArray, $api->all());
     }
